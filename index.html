@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio website">
+  <title>Your Name — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="background-overlay"></div>
+
+  <main class="glass-shell">
+    <nav class="nav">
+      <a class="brand" href="index.html">YOUR<span>.</span>NAME</a>
+      <a class="nav-link" href="portfolio.html">Portfolio <span>↗</span></a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">HELLO, I'M</p>
+        <h1>Your<br><span>Name.</span></h1>
+        <p class="intro">
+          นักพัฒนา / นักออกแบบ / ครีเอเตอร์
+          <br>
+          เขียนคำแนะนำตัวสั้น ๆ ของคุณตรงนี้ได้เลย
+        </p>
+
+        <div class="actions">
+          <a class="primary-btn" href="portfolio.html">ดู Portfolio <span>→</span></a>
+          <a class="ghost-btn" href="#about">เกี่ยวกับผม</a>
+        </div>
+      </div>
+
+      <div class="profile-wrap">
+        <div class="profile-glow"></div>
+        <div class="profile-card">
+          <img src="assets/profile.jpg" alt="รูปโปรไฟล์ของ Your Name"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div class="photo-placeholder">
+            <span>YOUR PHOTO</span>
+            <small>ใส่รูปของคุณที่<br>assets/profile.jpg</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <p class="section-label">01 / ABOUT ME</p>
+        <h2>เล่าเรื่องของคุณ<br>ในแบบที่เป็นคุณ</h2>
+      </div>
+      <div class="about-text">
+        <p>
+          เขียนประวัติส่วนตัว ประสบการณ์ ความสนใจ หรือสิ่งที่คุณกำลังทำอยู่
+          ตรงนี้ได้เลย ดีไซน์ถูกทำให้เป็น Glassmorphism เพื่อให้เห็นภาพ Background
+          ด้านหลังแบบเบลอ ๆ และยังอ่านง่าย
+        </p>
+        <div class="info-grid">
+          <div><span>NAME</span><strong>Your Name</strong></div>
+          <div><span>ROLE</span><strong>Developer</strong></div>
+          <div><span>LOCATION</span><strong>Thailand</strong></div>
+          <div><span>EMAIL</span><strong>your@email.com</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Your Name</span>
+      <span>Built with HTML / CSS / JS</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
