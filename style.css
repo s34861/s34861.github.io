@@ -13,7 +13,193 @@
     font-family: 'Kanit', sans-serif;
 }
 
-body {
+/* --- PACK PAGE STYLES (pack.html) --- */
+body.pack-body {
+    background-color: var(--toty-navy);
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(15, 35, 80, 0.9) 0%, rgba(4, 8, 20, 0.98) 75%),
+        repeating-linear-gradient(60deg, rgba(245, 208, 97, 0.015) 0px, rgba(245, 208, 97, 0.015) 1px, transparent 1px, transparent 8px);
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* ลบส่วนเกินด้านล่างและ Scrollbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ambient-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(245, 208, 97, 0.2) 0%, rgba(0, 212, 255, 0.1) 40%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    animation: pulse-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.pack-container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.toty-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #fff 0%, #f5d061 50%, #996515 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.pack-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.pack-body:hover .pack-stage {
+    transform: scale(1.03);
+}
+
+.toty-pack {
+    width: 230px;
+    height: 340px;
+    background: linear-gradient(145deg, #0f224a 0%, #060e20 100%);
+    border: 3px solid var(--toty-gold);
+    border-radius: 16px;
+    box-shadow: 0 0 35px rgba(245, 208, 97, 0.5), inset 0 0 20px rgba(0, 212, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: pack-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes pack-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-12px); }
+}
+
+.toty-pack::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg);
+    animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.pack-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--toty-gold);
+    text-shadow: 0 0 12px rgba(245, 208, 97, 0.8);
+    margin-bottom: 12px;
+}
+
+.pack-instruction {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: #e2e2e2;
+    letter-spacing: 1.5px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* เอฟเฟกต์แสงขาววาบ 2 วินาที */
+.white-flash-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #ffffff;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.white-flash-overlay.active {
+    opacity: 1;
+}
+
+/* วิดีโอเต็มจอ */
+.fullscreen-video-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #000;
+    z-index: 1000;
+    display: none;
+}
+
+.fullscreen-video-container video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay-action {
+    position: absolute;
+    bottom: 50px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    display: none;
+    text-align: center;
+}
+
+.btn-stat-gold {
+    display: inline-block;
+    padding: 16px 45px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #040814;
+    background: linear-gradient(135deg, #ffffff 0%, #f5d061 50%, #d4af37 100%);
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 35px rgba(245, 208, 97, 0.9);
+    transition: all 0.3s ease;
+}
+
+.btn-stat-gold:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 50px rgba(245, 208, 97, 1);
+}
+
+/* --- MAIN & PORTFOLIO PAGES STYLES (index.html & portfolio.html) --- */
+body.main-body {
     background-color: var(--toty-navy);
     background-image: 
         radial-gradient(circle at 50% 15%, rgba(15, 35, 80, 0.9) 0%, rgba(4, 8, 20, 0.98) 75%),
@@ -23,7 +209,6 @@ body {
     padding-bottom: 50px;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -58,7 +243,6 @@ body {
     text-shadow: 0 0 8px rgba(245, 208, 97, 0.6);
 }
 
-/* Container */
 .main-container {
     max-width: 1000px;
     margin: 30px auto;
@@ -74,165 +258,6 @@ body {
     text-shadow: 0 0 15px rgba(245, 208, 97, 0.4);
 }
 
-/* Pack Opening Styles (for pack.html) */
-.ambient-glow {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(245, 208, 97, 0.15) 0%, rgba(0, 212, 255, 0.1) 40%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    pointer-events: none;
-    animation: pulse-glow 4s ease-in-out infinite alternate;
-}
-
-@keyframes pulse-glow {
-    0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
-    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-}
-
-.pack-container {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    width: 100%;
-    max-width: 900px;
-    margin: 40px auto 0;
-    padding: 20px;
-}
-
-.toty-logo {
-    font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #fff 0%, #f5d061 50%, #996515 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-}
-
-.pack-stage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.pack-stage:hover {
-    transform: scale(1.03);
-}
-
-.toty-pack {
-    width: 240px;
-    height: 360px;
-    background: linear-gradient(145deg, #0f224a 0%, #060e20 100%);
-    border: 3px solid var(--toty-gold);
-    border-radius: 16px;
-    box-shadow: 0 0 30px rgba(245, 208, 97, 0.4), inset 0 0 20px rgba(0, 212, 255, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    animation: pack-float 3s ease-in-out infinite alternate;
-}
-
-@keyframes pack-float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-15px); }
-}
-
-.toty-pack::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-    transform: rotate(45deg);
-    animation: shine 3s infinite;
-}
-
-@keyframes shine {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
-}
-
-.pack-badge {
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    color: var(--toty-gold);
-    text-shadow: 0 0 10px rgba(245, 208, 97, 0.8);
-    margin-bottom: 15px;
-}
-
-.pack-instruction {
-    margin-top: 25px;
-    font-size: 1.2rem;
-    color: #dcdcdc;
-    animation: blink 1.5s infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-}
-
-.video-stage {
-    display: none;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    border: 2px solid var(--toty-gold);
-    border-radius: 12px;
-    box-shadow: 0 0 40px rgba(245, 208, 97, 0.5);
-    overflow: hidden;
-    background-color: #000;
-}
-
-.video-wrapper video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-}
-
-.action-area {
-    margin-top: 30px;
-    display: none;
-}
-
-.btn-stat {
-    display: inline-block;
-    padding: 16px 40px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #050b18;
-    background: linear-gradient(135deg, #f5d061 0%, #e6b800 100%);
-    border: 2px solid #fff;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 0 25px rgba(245, 208, 97, 0.8);
-    transition: all 0.3s ease;
-}
-
-.btn-stat:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 0 40px rgba(245, 208, 97, 1);
-}
-
-/* Card & Stats Styles (for index.html) */
 .toty-card {
     background: linear-gradient(160deg, rgba(12, 27, 58, 0.95) 0%, rgba(5, 12, 28, 0.98) 100%);
     border: 2px solid var(--toty-gold);
@@ -352,7 +377,6 @@ body {
 .trait-title { color: var(--toty-gold); font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
 .trait-desc { font-size: 0.75rem; color: #c0cae0; line-height: 1.3; }
 
-/* Portfolio Grid Styles (for portfolio.html) */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
