@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>พชรศร ปลั่งกลาง - TOTY Student Athlete</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --toty-navy: #040814;
+            --toty-blue-card: #0c1b3a;
+            --toty-gold: #f5d061;
+            --toty-gold-dark: #996515;
+            --toty-cyan: #00d2ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: var(--toty-navy);
+            background-image: 
+                radial-gradient(circle at 50% 15%, rgba(15, 35, 80, 0.9) 0%, rgba(4, 8, 20, 0.98) 75%),
+                repeating-linear-gradient(60deg, rgba(245, 208, 97, 0.015) 0px, rgba(245, 208, 97, 0.015) 1px, transparent 1px, transparent 8px);
+            color: #fff;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(4, 8, 20, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(245, 208, 97, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            color: var(--toty-gold);
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: #dcdcdc;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--toty-gold);
+            text-shadow: 0 0 8px rgba(245, 208, 97, 0.6);
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Main TOTY Dashboard Card */
+        .toty-card {
+            background: linear-gradient(160deg, rgba(12, 27, 58, 0.95) 0%, rgba(5, 12, 28, 0.98) 100%);
+            border: 2px solid var(--toty-gold);
+            border-radius: 20px;
+            box-shadow: 0 0 35px rgba(245, 208, 97, 0.25), 0 0 15px rgba(0, 212, 255, 0.2);
+            padding: 30px;
+            position: relative;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .profile-avatar-frame {
+            width: 130px;
+            height: 160px;
+            border-radius: 12px;
+            border: 2px solid var(--toty-gold);
+            box-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        .profile-avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .sub-badge {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: var(--toty-cyan);
+            font-weight: 700;
+        }
+
+        .player-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #f5d061 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        /* Info Grid (ส่วนสูง, วันเกิด, อายุ, สัญชาติ) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 12px;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(245, 208, 97, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 0.75rem;
+            color: #a0aabf;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--toty-gold);
+        }
+
+        /* Stats & Traits Layout Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--toty-gold);
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(245, 208, 97, 0.3);
+            padding-bottom: 8px;
+        }
+
+        /* Stat Bars */
+        .stat-item {
+            margin-bottom: 16px;
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .stat-bar-bg {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d2ff, #f5d061);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(245, 208, 97, 0.5);
+        }
+
+        /* Traits Grid */
+        .traits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .trait-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(245, 208, 97, 0.25);
+            border-radius: 10px;
+            padding: 12px;
+        }
+
+        .trait-title {
+            color: var(--toty-gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .trait-desc {
+            font-size: 0.75rem;
+            color: #c0cae0;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">EA FC 25 TOTY</div>
+        <div class="nav-links">
+            <a href="pack.html">เปิดแพ็ค</a>
+            <a href="index.html" class="active">หน้าหลัก (Stat)</a>
+            <a href="portfolio.html">Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="toty-card">
+            
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar-frame">
+                    <!-- ใส่ไฟล์รูปของคุณตรงนี้ -->
+                    <img src="your-image.jpg" alt="พชรศร ปลั่งกลาง" onerror="this.src='https://via.placeholder.com/130x160/0a152d/f5d061?text=STUDENT'">
+                </div>
+                <div class="profile-info">
+                    <div class="sub-badge">STUDENT ATHLETE • MED / ST</div>
+                    <div class="player-name">พชรศร ปลั่งกลาง</div>
+                    
+                    <div class="info-grid">
+                        <div class="info-box">
+                            <div class="info-label">ส่วนสูง</div>
+                            <div class="info-value">166 ซม.</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-label">วันเกิด</div>
+                            <div class="info-value">16 มี.ค. 2009</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-label">อายุ</div>
+                            <div class="info-value">17 ปี</div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-label">สัญชาติ</div>
+                            <div class="info-value">TH ไทย</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid: Stats & Traits -->
+            <div class="content-grid">
+                
+                <!-- Academic Stats -->
+                <div>
+                    <div class="section-title">ACADEMIC STATS</div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-header"><span>อังกฤษ</span><strong>67%</strong></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 67%;"></div></div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-header"><span>วิทยาศาสตร์</span><strong>60%</strong></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 60%;"></div></div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-header"><span>ภาษาไทย</span><strong>58%</strong></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 58%;"></div></div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-header"><span>คณิตศาสตร์</span><strong>40%</strong></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 40%;"></div></div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-header"><span>สังคมศึกษา</span><strong>32%</strong></div>
+                        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width: 32%;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Special Traits -->
+                <div>
+                    <div class="section-title">SPECIAL TRAITS</div>
+                    <div class="traits-grid">
+                        <div class="trait-box">
+                            <div class="trait-title">Creativity</div>
+                            <div class="trait-desc">ความคิดสร้างสรรค์ นวัตกรรม และการแก้ปัญหา</div>
+                        </div>
+                        <div class="trait-box">
+                            <div class="trait-title">Learning Instinct</div>
+                            <div class="trait-desc">สัญชาตญาณการเรียนรู้ไว จับประเด็นแม่นยำ</div>
+                        </div>
+                        <div class="trait-box">
+                            <div class="trait-title">Curious Mind</div>
+                            <div class="trait-desc">ช่างสังเกต ตั้งคำถาม และชื่นชอบการค้นหาคำตอบ</div>
+                        </div>
+                        <div class="trait-box">
+                            <div class="trait-title">Helping Hand</div>
+                            <div class="trait-desc">จิตใจพร้อมช่วยเหลือและทำงานร่วมกับทีม</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
