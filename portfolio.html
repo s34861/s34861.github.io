@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - พชรศร ปลั่งกลาง</title>
+    <title>Portfolio - พชรสร ปลั่งกลาง</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="main-body">
 
+    <!-- Header / Navbar -->
     <nav class="navbar">
         <div class="nav-brand">EA FC 25 TOTY</div>
         <div class="nav-links">
@@ -21,33 +22,63 @@
     <div class="main-container">
         <h1 class="page-title">ACHIEVEMENTS & PROJECTS</h1>
 
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <img src="https://via.placeholder.com/400x200/0a152d/f5d061?text=Project+1" class="portfolio-img" alt="ผลงาน 1">
-                <div class="portfolio-body">
-                    <div class="portfolio-tag">ACADEMIC PROJECT</div>
-                    <div class="portfolio-heading">ชื่อโครงการ / กิจกรรมที่ 1</div>
-                    <div class="portfolio-desc">คำอธิบายรายละเอียดผลงาน โครงการ หรือเกียรติบัตรที่คุณได้รับสั้นๆ</div>
+        <!-- รายการผลงานแนวยาว เลื่อนดูข้างล่าง -->
+        <div class="portfolio-list">
+
+            <!-- ผลงานที่ 1 -->
+            <div class="portfolio-row-card">
+                <div class="portfolio-row-img-wrap">
+                    <!-- เปลี่ยน src เป็นรูปผลงานจริงของคุณ -->
+                    <img src="https://via.placeholder.com/800x500/0c1b3a/f5d061?text=PROJECT+1+IMAGE" alt="ผลงานที่ 1" class="portfolio-row-img">
+                </div>
+                <div class="portfolio-row-content">
+                    <span class="portfolio-row-tag">ACADEMIC PROJECT</span>
+                    <h2 class="portfolio-row-title">โครงการพัฒนานวัตกรรมและเทคโนโลยีสถิติการเรียน</h2>
+                    <p class="portfolio-row-desc">
+                        รายละเอียดโครงการ ผลงาน หรือกิจกรรมอย่างเข้มข้น อธิบายบทบาทหน้าที่ วิธีการแก้ปัญหา เทคโนโลยีหรือเครื่องมือที่เลือกใช้ รวมถึงผลลัพธ์ที่ได้รับจากการทำโครงการนี้
+                    </p>
+                    <div class="portfolio-row-meta">
+                        <span class="meta-item">🗓️ ปี 2025 - 2026</span>
+                        <span class="meta-item">🏆 รางวัลชนะเลิศอันดับ 1</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="portfolio-card">
-                <img src="https://via.placeholder.com/400x200/0a152d/00d2ff?text=Project+2" class="portfolio-img" alt="ผลงาน 2">
-                <div class="portfolio-body">
-                    <div class="portfolio-tag">COMPETITION</div>
-                    <div class="portfolio-heading">ชื่อการแข่งขัน / ผลงานที่ 2</div>
-                    <div class="portfolio-desc">คำอธิบายรายละเอียดการแข่งขัน ผลรางวัล หรือสิ่งที่ได้รับจากการทำกิจกรรมนี้</div>
+            <!-- ผลงานที่ 2 -->
+            <div class="portfolio-row-card">
+                <div class="portfolio-row-img-wrap">
+                    <img src="https://via.placeholder.com/800x500/0c1b3a/00d2ff?text=COMPETITION+IMAGE" alt="ผลงานที่ 2" class="portfolio-row-img">
+                </div>
+                <div class="portfolio-row-content">
+                    <span class="portfolio-row-tag">COMPETITION</span>
+                    <h2 class="portfolio-row-title">การแข่งขันวิชาการระดับชาติ</h2>
+                    <p class="portfolio-row-desc">
+                        อธิบายรายละเอียดการเข้าร่วมแข่งขัน ทักษะที่ได้ดึงออกมาใช้ และประสบการณ์ที่ได้รับจากการทำงานร่วมกับทีมในสภาวะที่มีแรงกดดันสูง
+                    </p>
+                    <div class="portfolio-row-meta">
+                        <span class="meta-item">🗓️ ปี 2025</span>
+                        <span class="meta-item">📍 บ้านบึง</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="portfolio-card">
-                <img src="https://via.placeholder.com/400x200/0a152d/f5d061?text=Project+3" class="portfolio-img" alt="ผลงาน 3">
-                <div class="portfolio-body">
-                    <div class="portfolio-tag">CERTIFICATE</div>
-                    <div class="portfolio-heading">เกียรติบัตร / ใบประกาศนียบัตร</div>
-                    <div class="portfolio-desc">รายละเอียดเกี่ยวกับใบประกาศนียบัตรที่คุณได้รับในสาขาต่างๆ</div>
+            <!-- ผลงานที่ 3 -->
+            <div class="portfolio-row-card">
+                <div class="portfolio-row-img-wrap">
+                    <img src="https://via.placeholder.com/800x500/0c1b3a/f5d061?text=CERTIFICATE+IMAGE" alt="ผลงานที่ 3" class="portfolio-row-img">
+                </div>
+                <div class="portfolio-row-content">
+                    <span class="portfolio-row-tag">CERTIFICATE & ACTIVITY</span>
+                    <h2 class="portfolio-row-title">เกียรติบัตรการอบรมเชิงปฏิบัติการ</h2>
+                    <p class="portfolio-row-desc">
+                        รายละเอียดเกี่ยวกับเกียรติบัตร คอร์สเรียนออนไลน์ หรือกิจกรรมจิตอาสาเพื่อสังคม เพิ่มเติมศักยภาพและความพร้อมของ Student Athlete
+                    </p>
+                    <div class="portfolio-row-meta">
+                        <span class="meta-item">📜 ใบประกาศนียบัตรรับรอง</span>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 
