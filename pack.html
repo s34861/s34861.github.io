@@ -5,294 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EA FC 25 - TOTY Pack Opening</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --toty-navy: #050b18;
-            --toty-gold: #f5d061;
-            --toty-gold-glow: #d4af37;
-            --toty-cyan: #00d2ff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Kanit', sans-serif;
-        }
-
-        body {
-            background-color: var(--toty-navy);
-            background-image: 
-                radial-gradient(circle at 50% 30%, rgba(20, 45, 110, 0.8) 0%, rgba(5, 11, 24, 0.95) 70%),
-                repeating-linear-gradient(45deg, rgba(245, 208, 97, 0.02) 0px, rgba(245, 208, 97, 0.02) 2px, transparent 2px, transparent 10px);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Ambient Lighting */
-        .ambient-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(245, 208, 97, 0.15) 0%, rgba(0, 212, 255, 0.1) 40%, transparent 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            pointer-events: none;
-            animation: pulse-glow 4s ease-in-out infinite alternate;
-        }
-
-        @keyframes pulse-glow {
-            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
-            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-        }
-
-        .container {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            width: 100%;
-            max-width: 900px;
-            padding: 20px;
-        }
-
-        .toty-logo {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 0%, #f5d061 50%, #996515 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
-            letter-spacing: 4px;
-            margin-bottom: 25px;
-        }
-
-        /* Pre-Open Stage (Pack Animation) */
-        .pack-stage {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .pack-stage:hover {
-            transform: scale(1.03);
-        }
-
-        .toty-pack {
-            width: 240px;
-            height: 360px;
-            background: linear-gradient(145deg, #0f224a 0%, #060e20 100%);
-            border: 3px solid var(--toty-gold);
-            border-radius: 16px;
-            box-shadow: 
-                0 0 30px rgba(245, 208, 97, 0.4),
-                inset 0 0 20px rgba(0, 212, 255, 0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            animation: pack-float 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes pack-float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-15px); }
-        }
-
-        .toty-pack::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
-        }
-
-        .pack-badge {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            color: var(--toty-gold);
-            text-shadow: 0 0 10px rgba(245, 208, 97, 0.8);
-            margin-bottom: 15px;
-        }
-
-        .pack-instruction {
-            margin-top: 25px;
-            font-size: 1.2rem;
-            color: #dcdcdc;
-            letter-spacing: 1px;
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        /* Video Stage (Hidden by default) */
-        .video-stage {
-            display: none;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            border: 2px solid var(--toty-gold);
-            border-radius: 12px;
-            box-shadow: 0 0 40px rgba(245, 208, 97, 0.5);
-            overflow: hidden;
-            background-color: #000;
-        }
-
-        .video-wrapper video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Post-Open Button (Stat Link) */
-        .action-area {
-            margin-top: 30px;
-            display: none;
-        }
-
-        .btn-stat {
-            display: inline-block;
-            padding: 16px 40px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #050b18;
-            background: linear-gradient(135deg, #f5d061 0%, #e6b800 100%);
-            border: 2px solid #fff;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 0 25px rgba(245, 208, 97, 0.8);
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-        }
-
-        .btn-stat:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 40px rgba(245, 208, 97, 1);
-            background: linear-gradient(135deg, #fff 0%, #f5d061 100%);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="ambient-glow"></div>
-
-    <div class="container">
-        <div class="toty-logo">EA SPORTS FC 25 • TOTY PACK</div>
-
-        <!-- หน้าแพ็คการ์ดก่อนคลิก -->
-        <div class="pack-stage" id="packStage" onclick="openPack()">
-            <div class="toty-pack">
-                <div class="pack-badge">TOTY</div>
-                <div style="color: #00d2ff; font-weight: bold; font-size: 1rem;">STUDENT ATHLETE</div>
-            </div>
-            <div class="pack-instruction">✦ คลิกเพื่อเปิดแพ็คการ์ด ✦</div>
-        </div>
-
-        <!-- หน้ารอเล่นวิดีโอ -->
-        <div class="video-stage" id="videoStage">
-            <div class="video-wrapper">
-                <!-- เปลี่ยน src เป็นที่อยู่ไฟล์วิดีโอเปิดแพ็คของคุณ (เช่น assets/pack-opening.mp4) -->
-                <video id="packVideo" playsinline>
-                    <source src="your-pack-video.mp4" type="video/mp4">
-                    เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
-                </video>
-            </div>
-        </div>
-
-        <!-- ปุ่มสำหรับคลิกเข้าไปดู Stat (แสดงหลังจากกดเปิดแพ็ค หรือวิดีโอเล่นจบ) -->
-        <div class="action-area" id="actionArea">
-            <a href="index.html" class="btn-stat">⚡ ดู STAT ตัวละคร (เข้าสู่หน้าหลัก) ⚡</a>
-        </div>
-    </div>
-
-    <script>
-        function openPack() {
-            // ซ่อนแพ็ค และแสดงวิดีโอ
-            document.getElementById('packStage').style.display = 'none';
-            document.getElementById('videoStage').style.display = 'block';
-            document.getElementById('actionArea').style.display = 'block';
-
-            const video = document.getElementById('packVideo');
-            video.play().catch(error => {
-                console.log("Auto-play error: ", error);
-            });
-
-            // เมื่อวิดีโอเล่นจบ สามารถสั่งย้ายไปหน้า index.html อัตโนมัติได้ (ถ้าต้องการ)
-            video.onended = function() {
-                // window.location.href = "index.html"; // ปลดคอมเมนต์บรรทัดนี้ถ้าต้องการให้เปลี่ยนหน้าทันทีเมื่อคลิปจบ
-            };
-        }
-    </script>
-    <!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EA FC 25 - TOTY Pack Opening</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="pack-body" onclick="triggerPackOpening()">
+
+    <!-- เอฟเฟกต์แสงไฟเรืองด้านหลัง -->
     <div class="ambient-glow"></div>
+
+    <!-- ส่วนแสดงการ์ดแพ็คตรงกลาง -->
     <div class="pack-container">
         <div class="toty-logo">EA SPORTS FC 25 • TOTY PACK</div>
 
-        <div class="pack-stage" id="packStage" onclick="openPack()">
+        <div class="pack-stage">
             <div class="toty-pack">
                 <div class="pack-badge">TOTY</div>
-                <div style="color: #00d2ff; font-weight: bold;">STUDENT ATHLETE</div>
+                <div style="color: #00d2ff; font-weight: 800; font-size: 0.95rem; letter-spacing: 1px;">STUDENT ATHLETE</div>
             </div>
-            <div class="pack-instruction">✦ คลิกเพื่อเปิดแพ็คการ์ด ✦</div>
+            <div class="pack-instruction">✦ คลิกตรงไหนก็ได้เพื่อเปิดแพ็คการ์ด ✦</div>
         </div>
+    </div>
 
-        <div class="video-stage" id="videoStage">
-            <div class="video-wrapper">
-                <video id="packVideo" playsinline controls>
-                    <source src="your-pack-video.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
+    <!-- ฉากเฟดสีขาววาบ (White Flash) -->
+    <div class="white-flash-overlay" id="whiteFlash"></div>
 
-        <div class="action-area" id="actionArea">
-            <a href="index.html" class="btn-stat">⚡ ดู STAT ตัวละคร (เข้าสู่หน้าหลัก) ⚡</a>
+    <!-- วิดีโอเต็มจอ (Full Screen Video) -->
+    <div class="fullscreen-video-container" id="fullscreenVideo">
+        <!-- เปลี่ยน your-pack-video.mp4 เป็นชื่อไฟล์วิดีโอของคุณ -->
+        <video id="packVideo" playsinline>
+            <source src="your-pack-video.mp4" type="video/mp4">
+            เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+        </video>
+
+        <!-- ปุ่มสำหรับกดเข้าสู่หน้าหลัก (index.html) ลอยบนวิดีโอ -->
+        <div class="video-overlay-action" id="videoActionBtn">
+            <a href="index.html" class="btn-stat-gold">⚡ ดู STAT ตัวละคร (เข้าสู่หน้าหลัก) ⚡</a>
         </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>
