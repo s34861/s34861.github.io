@@ -3,130 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - พชรสร ปลั่งกลาง</title>
+    <title>Portfolio - พชรศร ปลั่งกลาง</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --toty-navy: #040814;
-            --toty-gold: #f5d061;
-            --toty-cyan: #00d2ff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Kanit', sans-serif;
-        }
-
-        body {
-            background-color: var(--toty-navy);
-            background-image: radial-gradient(circle at 50% 15%, rgba(15, 35, 80, 0.9) 0%, rgba(4, 8, 20, 0.98) 75%);
-            color: #fff;
-            min-height: 100vh;
-            padding-bottom: 50px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(4, 8, 20, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(245, 208, 97, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-brand {
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
-            color: var(--toty-gold);
-            font-size: 1.3rem;
-            letter-spacing: 2px;
-        }
-
-        .nav-links a {
-            color: #dcdcdc;
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--toty-gold);
-        }
-
-        .main-container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .page-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--toty-gold);
-            text-align: center;
-            margin-bottom: 30px;
-            text-shadow: 0 0 15px rgba(245, 208, 97, 0.4);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio-card {
-            background: rgba(12, 27, 58, 0.8);
-            border: 1px solid rgba(245, 208, 97, 0.3);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(245, 208, 97, 0.4);
-            border-color: var(--toty-gold);
-        }
-
-        .portfolio-img {
-            width: 100%;
-            height: 180px;
-            background-color: #000;
-            object-fit: cover;
-        }
-
-        .portfolio-body {
-            padding: 15px;
-        }
-
-        .portfolio-tag {
-            font-size: 0.75rem;
-            color: var(--toty-cyan);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .portfolio-heading {
-            font-size: 1.1rem;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .portfolio-desc {
-            font-size: 0.85rem;
-            color: #b0b8c8;
-            line-height: 1.4;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="main-body">
 
     <nav class="navbar">
         <div class="nav-brand">EA FC 25 TOTY</div>
@@ -141,7 +22,6 @@
         <h1 class="page-title">ACHIEVEMENTS & PROJECTS</h1>
 
         <div class="portfolio-grid">
-            <!-- ตัวอย่างการ์ดผลงานที่ 1 -->
             <div class="portfolio-card">
                 <img src="https://via.placeholder.com/400x200/0a152d/f5d061?text=Project+1" class="portfolio-img" alt="ผลงาน 1">
                 <div class="portfolio-body">
@@ -151,7 +31,6 @@
                 </div>
             </div>
 
-            <!-- ตัวอย่างการ์ดผลงานที่ 2 -->
             <div class="portfolio-card">
                 <img src="https://via.placeholder.com/400x200/0a152d/00d2ff?text=Project+2" class="portfolio-img" alt="ผลงาน 2">
                 <div class="portfolio-body">
@@ -161,7 +40,6 @@
                 </div>
             </div>
 
-            <!-- ตัวอย่างการ์ดผลงานที่ 3 -->
             <div class="portfolio-card">
                 <img src="https://via.placeholder.com/400x200/0a152d/f5d061?text=Project+3" class="portfolio-img" alt="ผลงาน 3">
                 <div class="portfolio-body">
@@ -172,29 +50,7 @@
             </div>
         </div>
     </div>
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - พชรศร ปลั่งกลาง</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-brand">EA FC 25 TOTY</div>
-        <div class="nav-links">
-            <a href="pack.html">เปิดแพ็ค</a>
-            <a href="index.html">หน้าหลัก (Stat)</a>
-            <a href="portfolio.html" class="active">Portfolio</a>
-        </div>
-    </nav>
-
-    <!-- ใส่เนื้อหา Portfolio Grid ของ portfolio.html ตรงนี้ -->
 
     <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>
