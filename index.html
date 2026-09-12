@@ -24,39 +24,29 @@
             
             <!-- Profile Header -->
             <div class="profile-header">
-                <div class="profile-avatar-frame">
-                    <img src="your-image.jpg" alt="พชรสร ปลั่งกลาง" onerror="this.src='https://via.placeholder.com/130x160/0a152d/f5d061?text=STUDENT'">
-                </div>
-                <div class="profile-info">
-                    <div class="sub-badge">STUDENT ATHLETE • MED / ST</div>
-                    <div class="player-name">พชรสร ปลั่งกลาง</div>
-                    
-                    <div class="info-grid">
-                        <div class="info-box">
-                            <div class="info-label">ส่วนสูง</div>
-                            <div class="info-value">166 ซม.</div>
-                        </div>
-                        <div class="info-box">
-                            <div class="info-label">วันเกิด</div>
-                            <div class="info-value">16 มี.ค. 2009</div>
-                        </div>
-                        <div class="info-box">
-                            <div class="info-label">อายุ</div>
-                            <div class="info-value">17 ปี</div>
-                        </div>
-                        <div class="info-box">
-                            <div class="info-label">สัญชาติ</div>
-                            <div class="info-value">TH ไทย 🇹🇭</div>
-                        </div>
-                    </div>
-                    <!-- Radar Chart 5 เหลี่ยม -->
-<div class="radar-chart-container">
-    <canvas id="statRadarChart"></canvas>
-</div>
-                    
-                </div>
+    <!-- ฝั่งซ้าย: รูป + ชื่อ + กล่องสถิติ -->
+    <div class="profile-left">
+        <div class="profile-avatar-frame">
+            <img src="bg.jpg" alt="Profile">
+        </div>
+        <div class="profile-info">
+            <span class="sub-badge">STUDENT ATHLETE • MED / ST</span>
+            <h1 class="player-name">พชรสร ปลั่งกลาง</h1>
+            
+            <div class="info-grid">
+                <div class="info-box"><span class="info-label">ส่วนสูง</span><span class="info-value">166 ซม.</span></div>
+                <div class="info-box"><span class="info-label">วันเกิด</span><span class="info-value">16 มี.ค. 2009</span></div>
+                <div class="info-box"><span class="info-label">อายุ</span><span class="info-value">17 ปี</span></div>
+                <div class="info-box"><span class="info-label">สัญชาติ</span><span class="info-value">TH ไทย TH</span></div>
             </div>
+        </div>
+    </div>
 
+    <!-- ฝั่งขวา: กราฟ 5 เหลี่ยม (จะไปอยู่ตรงช่องสี่เหลี่ยมแดงพอดี) -->
+    <div class="radar-chart-container">
+        <canvas id="statRadarChart"></canvas>
+    </div>
+            </div>
             <!-- Content Grid: Academic Stats & Special Traits -->
             <div class="content-grid">
                 
