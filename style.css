@@ -550,3 +550,43 @@ body.pack-body {
     width: 100% !important;
     height: 100% !important;
 }
+/* จัด Layout ส่วนหัวให้ดันไปขวาสุด */
+.profile-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+.profile-left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex: 1;
+}
+
+/* กำหนดขนาดและตำแหน่งของ Chart ฝั่งขวาบน */
+.radar-chart-container {
+    width: 220px !important;
+    height: 220px !important;
+    position: relative;
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+#statRadarChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media (max-width: 900px) {
+    .profile-header {
+        flex-direction: column;
+    }
+    .profile-left {
+        width: 100%;
+    }
+    .radar-chart-container {
+        margin: 20px auto 0 auto;
+    }
+}
