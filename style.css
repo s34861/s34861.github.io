@@ -522,4 +522,28 @@ body.main-body {
     .portfolio-row-title {
         font-size: 1.3rem;
     }
+    .stat-bar-fill.stat-english {
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+    box-shadow: 0 0 12px rgba(56, 239, 125, 0.7);
+}
+
+.stat-bar-fill.stat-science {
+    background: linear-gradient(90deg, #00d2ff, #0072ff);
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.7);
+}
+
+.stat-bar-fill.stat-thai {
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    box-shadow: 0 0 12px rgba(255, 65, 108, 0.7);
+}
+
+.stat-bar-fill.stat-math {
+    background: linear-gradient(90deg, #f5d061, #ffae00);
+    box-shadow: 0 0 12px rgba(245, 208, 97, 0.7);
+}
+
+.stat-bar-fill.stat-social {
+    background: linear-gradient(90deg, #ff7b00, #ff2a00);
+    box-shadow: 0 0 12px rgba(255, 123, 0, 0.7);
+}
 }
