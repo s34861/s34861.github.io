@@ -1,6 +1,12 @@
 /* ==========================================
-   1. CORE & RESET STYLES
+   1. GLOBAL & VARIABLES
    ========================================== */
+:root {
+    --toty-gold: #f5d061;
+    --toty-navy: #040814;
+    --toty-blue: #0f224a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +17,6 @@
 body, .main-body {
     background-color: #030814;
     background-image: radial-gradient(circle at center, #0a1b3a 0%, #030814 100%);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     color: #ffffff;
     min-height: 100vh;
@@ -32,7 +35,7 @@ body, .main-body {
     background: rgba(10, 21, 45, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 2px solid #f5d061;
+    border-bottom: 2px solid var(--toty-gold);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     position: sticky;
     top: 0;
@@ -43,7 +46,7 @@ body, .main-body {
     font-family: 'Cinzel', serif;
     font-size: 1.5rem;
     font-weight: 900;
-    color: #f5d061;
+    color: var(--toty-gold);
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(245, 208, 97, 0.6);
 }
@@ -66,13 +69,13 @@ body, .main-body {
 .nav-links a.active, 
 .nav-links a:hover {
     background: rgba(245, 208, 97, 0.15);
-    color: #f5d061;
+    color: var(--toty-gold);
     border-color: rgba(245, 208, 97, 0.4);
     box-shadow: 0 0 10px rgba(245, 208, 97, 0.2);
 }
 
 /* ==========================================
-   3. GLASS CONTAINER & TOTY CARD
+   3. INDEX PAGE (หน้าหลัก - สถิติ & โปรไฟล์)
    ========================================== */
 .main-container {
     max-width: 1000px;
@@ -85,32 +88,13 @@ body, .main-body {
     background: rgba(10, 21, 45, 0.75);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 2px solid #f5d061;
+    border: 2px solid var(--toty-gold);
     border-radius: 20px;
     padding: 35px;
-    box-shadow: 0 0 35px rgba(245, 208, 97, 0.25), 
-                inset 0 0 20px rgba(245, 208, 97, 0.1);
+    box-shadow: 0 0 35px rgba(245, 208, 97, 0.25), inset 0 0 20px rgba(245, 208, 97, 0.1);
 }
 
-.page-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    text-align: center;
-    color: #f5d061;
-    margin-bottom: 10px;
-    text-shadow: 0 0 15px rgba(245, 208, 97, 0.5);
-}
-
-.portfolio-subtitle {
-    text-align: center;
-    color: #a0aec0;
-    font-size: 0.95rem;
-    margin-bottom: 30px;
-}
-
-/* ==========================================
-   4. INDEX PAGE - PROFILE & STATS
-   ========================================== */
+/* แก้ไขรูปโปรไฟล์ฝั่งซ้ายของหน้า Index ให้แสดงผลถูกต้อง */
 .profile-header {
     display: flex;
     gap: 25px;
@@ -120,320 +104,286 @@ body, .main-body {
     border-bottom: 1px solid rgba(245, 208, 97, 0.3);
 }
 
-.profile-avatar-frame {
+.profile-avatar-frame, .player-card-img {
     width: 130px;
     height: 160px;
-    border: 2px solid #f5d061;
+    border: 2px solid var(--toty-gold);
     border-radius: 12px;
     overflow: hidden;
-    background: rgba(10, 21, 45, 0.5);
-    box-shadow: 0 0 15px rgba(245, 208, 97, 0.3);
+    background: url('bg.jpg') center/cover, #0f224a;
+    box-shadow: 0 0 20px rgba(245, 208, 97, 0.3);
     flex-shrink: 0;
 }
 
-.profile-avatar-frame img {
+.profile-avatar-frame img, .player-card-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.profile-info {
-    flex-grow: 1;
-}
+.sub-badge { color: var(--toty-gold); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; }
+.player-name { font-size: 2rem; font-weight: 800; color: #fff; margin: 5px 0 15px; }
 
-.sub-badge {
-    color: #f5d061;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 5px;
-}
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.info-box { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(245, 208, 97, 0.2); border-radius: 8px; padding: 10px; text-align: center; }
+.info-label { font-size: 0.75rem; color: #a0aec0; }
+.info-value { font-size: 0.95rem; font-weight: 700; color: var(--toty-gold); }
 
-.player-name {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
+/* Stats Bar */
+.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.section-title { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--toty-gold); margin-bottom: 20px; border-left: 4px solid var(--toty-gold); padding-left: 10px; }
+.stat-item { margin-bottom: 15px; }
+.stat-header { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px; color: #fff; font-weight: 600; }
+.stat-bar-bg { width: 100%; height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 5px; overflow: hidden; }
+.stat-bar-fill { height: 100%; border-radius: 5px; }
 
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-}
+.stat-english { background: linear-gradient(90deg, #11998e, #38ef7d); }
+.stat-science { background: linear-gradient(90deg, #00d2ff, #0072ff); }
+.stat-thai    { background: linear-gradient(90deg, #ff416c, #ff4b2b); }
+.stat-math    { background: linear-gradient(90deg, #f5d061, #ffae00); }
+.stat-social  { background: linear-gradient(90deg, #ff7b00, #ff2a00); }
 
-.info-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(245, 208, 97, 0.2);
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-}
-
-.info-label {
-    font-size: 0.75rem;
-    color: #a0aec0;
-    margin-bottom: 3px;
-}
-
-.info-value {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #f5d061;
-}
-
-/* Academic Stats & Subject Bar Colors */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.section-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #f5d061;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    border-left: 4px solid #f5d061;
-    padding-left: 10px;
-}
-
-.stat-item {
-    margin-bottom: 15px;
-}
-
-.stat-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 0.9rem;
-}
-
-.stat-header span, 
-.stat-header strong {
-    color: #ffffff !important;
-    font-weight: 600 !important;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-}
-
-.stat-bar-bg {
-    width: 100%;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.stat-bar-fill {
-    height: 100%;
-    border-radius: 5px;
-    transition: width 1s ease-in-out;
-}
-
-/* สีเฉพาะแต่ละวิชาแบบสว่างชัด */
-.stat-bar-fill.stat-english { background: linear-gradient(90deg, #11998e, #38ef7d); box-shadow: 0 0 10px rgba(56, 239, 125, 0.7); }
-.stat-bar-fill.stat-science { background: linear-gradient(90deg, #00d2ff, #0072ff); box-shadow: 0 0 10px rgba(0, 212, 255, 0.7); }
-.stat-bar-fill.stat-thai    { background: linear-gradient(90deg, #ff416c, #ff4b2b); box-shadow: 0 0 10px rgba(255, 65, 108, 0.7); }
-.stat-bar-fill.stat-math    { background: linear-gradient(90deg, #f5d061, #ffae00); box-shadow: 0 0 10px rgba(245, 208, 97, 0.7); }
-.stat-bar-fill.stat-social  { background: linear-gradient(90deg, #ff7b00, #ff2a00); box-shadow: 0 0 10px rgba(255, 123, 0, 0.7); }
-
-/* Traits Grid */
-.traits-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.trait-box {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(245, 208, 97, 0.2);
-    border-radius: 10px;
-    padding: 12px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-.trait-title { color: #f5d061; font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
-.trait-desc { color: #cbd5e0; font-size: 0.78rem; line-height: 1.3; }
+.traits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.trait-box { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(245, 208, 97, 0.2); border-radius: 10px; padding: 12px; }
+.trait-title { color: var(--toty-gold); font-weight: 700; font-size: 0.9rem; }
+.trait-desc { color: #cbd5e0; font-size: 0.78rem; margin-top: 4px; }
 
 /* ==========================================
-   5. PACK PAGE STYLES (รองรับ pack.html เดิม)
+   4. PACK PAGE (หน้า pack.html ตามดีไซน์คุณ)
    ========================================== */
-.pack-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 120px);
-    width: 100%;
-}
-
-.pack-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.pack-card, .pack-card-ui {
-    background: linear-gradient(135deg, rgba(10, 21, 45, 0.9), rgba(5, 12, 28, 0.95));
-    border: 2px solid #f5d061;
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 0 40px rgba(245, 208, 97, 0.35);
-    max-width: 420px;
-    width: 90%;
-    position: relative;
+body.pack-body {
+    background-color: var(--toty-navy);
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(15, 35, 80, 0.9) 0%, rgba(4, 8, 20, 0.98) 75%),
+        repeating-linear-gradient(60deg, rgba(245, 208, 97, 0.015) 0px, rgba(245, 208, 97, 0.015) 1px, transparent 1px, transparent 8px);
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
-}
-
-.pack-title, .pack-card-title {
-    font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: #ffffff;
-    margin-bottom: 25px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-.pack-glow {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(245, 208, 97, 0.15) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.open-btn, .skip-btn {
-    background: linear-gradient(45deg, #f5d061, #e5a910);
-    border: none;
-    padding: 14px 36px;
-    color: #030814;
-    font-size: 1rem;
-    font-weight: 800;
-    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
+    user-select: none;
 }
 
-.open-btn:hover, .skip-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 0 30px rgba(245, 208, 97, 0.7);
-}
-
-.video-container {
-    position: relative;
-    max-width: 800px;
-    width: 90%;
-    margin: 0 auto;
-    border: 2px solid #f5d061;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(245, 208, 97, 0.4);
-}
-
-.video-container video {
-    width: 100%;
-    display: block;
-}
-
-.skip-btn {
+.ambient-glow {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(245, 208, 97, 0.2) 0%, rgba(0, 212, 255, 0.1) 40%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    animation: pulse-glow 3s ease-in-out infinite alternate;
 }
+
+@keyframes pulse-glow {
+    0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.pack-container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.toty-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #fff 0%, #f5d061 50%, #996515 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.pack-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.pack-body:hover .pack-stage { transform: scale(1.03); }
+
+.toty-pack {
+    width: 230px;
+    height: 340px;
+    background: linear-gradient(145deg, #0f224a 0%, #060e20 100%);
+    border: 3px solid var(--toty-gold);
+    border-radius: 16px;
+    box-shadow: 0 0 35px rgba(245, 208, 97, 0.5), inset 0 0 20px rgba(0, 212, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: pack-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes pack-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-12px); }
+}
+
+.toty-pack::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg);
+    animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.pack-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--toty-gold);
+    text-shadow: 0 0 12px rgba(245, 208, 97, 0.8);
+    margin-bottom: 12px;
+}
+
+.pack-instruction {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    color: #e2e2e2;
+    letter-spacing: 1.5px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ควบคุมซ่อนวิดีโอตอนยังไม่กดเปิด */
+.fullscreen-video-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #000;
+    z-index: 1000;
+    display: none; /* ซ่อนไว้เป็นค่าเริ่มต้น */
+}
+
+.fullscreen-video-container.active {
+    display: block !important;
+}
+
+.fullscreen-video-container video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay-action {
+    position: absolute;
+    bottom: 50px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    display: none;
+}
+
+.white-flash-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #ffffff;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.white-flash-overlay.active { opacity: 1; }
+
+.btn-stat-gold {
+    display: inline-block;
+    padding: 16px 45px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #040814;
+    background: linear-gradient(135deg, #ffffff 0%, #f5d061 50%, #d4af37 100%);
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 35px rgba(245, 208, 97, 0.9);
+    transition: all 0.3s ease;
+}
+
+.btn-stat-gold:hover { transform: scale(1.08); box-shadow: 0 0 50px rgba(245, 208, 97, 1); }
 
 /* ==========================================
-   6. PORTFOLIO PAGE STYLES (รองรับ portfolio.html เดิม)
+   5. PORTFOLIO PAGE (หน้า portfolio.html แก้ไขการ์ด & รูปแตก)
    ========================================== */
-.portfolio-grid {
+.portfolio-container, .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
+    margin-top: 25px;
 }
 
-.portfolio-item {
+/* สร้างการ์ดรองรับ Class เดิมใน HTML ภาพที่ 3 */
+.portfolio-card, .portfolio-item {
     background: rgba(10, 21, 45, 0.7);
-    border: 1.5px solid rgba(245, 208, 97, 0.3);
+    border: 1.5px solid rgba(245, 208, 97, 0.35);
     border-radius: 14px;
-    overflow: hidden;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
-.portfolio-item:hover {
-    transform: translateY(-8px);
-    border-color: #f5d061;
-    box-shadow: 0 10px 25px rgba(245, 208, 97, 0.4);
+.portfolio-card:hover, .portfolio-item:hover {
+    transform: translateY(-6px);
+    border-color: var(--toty-gold);
+    box-shadow: 0 8px 30px rgba(245, 208, 97, 0.3);
 }
 
-.portfolio-img-box {
+.portfolio-card h3, .portfolio-item h3 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin: 10px 0 8px;
+}
+
+.portfolio-card p, .portfolio-item p {
+    color: #cbd5e0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+/* สไตล์กล่องรูปผลงานกันรูปแตก */
+.portfolio-img-box, .portfolio-card img {
     width: 100%;
     height: 180px;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(245, 208, 97, 0.2);
-}
-
-.portfolio-img-box img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.portfolio-item:hover .portfolio-img-box img {
-    transform: scale(1.08);
-}
-
-.portfolio-info-box {
-    padding: 20px;
-}
-
-.portfolio-tag {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: #f5d061;
-    background: rgba(245, 208, 97, 0.15);
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-    border: 1px solid rgba(245, 208, 97, 0.3);
-}
-
-.portfolio-info-box h3 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.portfolio-info-box p {
-    color: #cbd5e0;
-    font-size: 0.85rem;
-    line-height: 1.4;
+    border-radius: 8px;
+    border: 1px solid rgba(245, 208, 97, 0.2);
+    background: rgba(245, 208, 97, 0.05);
 }
 
 .hidden { display: none !important; }
 
-/* ==========================================
-   7. RESPONSIVE DESIGN
-   ========================================== */
 @media (max-width: 768px) {
-    .navbar { padding: 15px 20px; }
-    .nav-brand { font-size: 1.2rem; }
-    .toty-card { padding: 20px; }
     .content-grid { grid-template-columns: 1fr; }
-    .profile-header { flex-direction: column; text-align: center; }
+    .info-grid { grid-template-columns: repeat(2, 1fr); }
+    .navbar { padding: 15px 20px; }
 }
