@@ -574,11 +574,52 @@ body.main-body {
 .trait-box {
     background: rgba(255, 255, 255, 0.04) !important;
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);}
     /* เปลี่ยนสีตัวเลข % ในส่วน Stat ให้เป็นสีขาวสว่างเรืองแสง */
 .stat-header strong {
     color: #ffffff !important;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
+/* ดึงสไตล์ Navbar แถบด้านบนกลับมาสมบูรณ์ */
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 40px !important;
+    background: #0a152d !important;
+    border-bottom: 2px solid #f5d061 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    position: relative !important;
+    z-index: 100 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.nav-brand {
+    font-family: 'Cinzel', serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    color: #f5d061 !important;
+    letter-spacing: 2px !important;
+}
+
+.nav-links {
+    display: flex !important;
+    gap: 20px !important;
+}
+
+.nav-links a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-links a.active, 
+.nav-links a:hover {
+    background: rgba(245, 208, 97, 0.2) !important;
+    color: #f5d061 !important;
 }
 }
