@@ -77,14 +77,17 @@
                 </div>
             </div>
 
-            <!-- ผลงานที่ 3 -->
+                        <!-- ผลงานที่ 3 (เปลี่ยนเป็นวิดีโอ YouTube) -->
             <div class="portfolio-row-card">
-                <div class="portfolio-slider-wrap">
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                    <div class="slider-track">
-                        <img src="project3_1.jpg" alt="ผลงานที่ 3 รูป 1" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/f5d061?text=CERTIFICATE+IMG+1';">
-                    </div>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
+                <div class="portfolio-video-wrap">
+                    <!-- นำ ID วิดีโอ YouTube ของคุณมาใส่แทนตรง VIDEO_ID ด้านล่างนี้ครับ -->
+                    <iframe 
+                        src="https://www.youtube.com/embed/VIDEO_ID" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
                 <div class="portfolio-row-content">
                     <span class="portfolio-row-tag">CERTIFICATE & ACTIVITY</span>
@@ -97,6 +100,7 @@
                     </div>
                 </div>
             </div>
+            
 
         </div>
     </div>
