@@ -15,7 +15,7 @@
 }
 
 body, .main-body, .pack-body {
-    background: linear-gradient(180deg, rgba(3, 8, 20, 0.75) 0%, rgba(4, 8, 20, 0.88) 100%),
+    background: linear-gradient(180deg, rgba(3, 8, 20, 0) 0%, rgba(4, 8, 20, 0) 100%),
                 url('bg.jpg') center/cover no-repeat fixed !important;
     color: #ffffff;
     min-height: 100vh;
@@ -86,7 +86,7 @@ body, .main-body, .pack-body {
 
 .toty-card {
     background: rgba(10, 21, 45, 0.75);
-    backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 2px solid var(--toty-gold);
     border-radius: 20px;
