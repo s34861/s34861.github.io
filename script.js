@@ -6,7 +6,7 @@ let isOpening = false;
 const CONFIG = {
     videoDelay: 1000,   // รอกี่วิถึงเริ่มเล่นวิดีโอ (ปัจจุบัน 1 วิ)
     flashFadeOut: 2000, // รอกี่วิถึงจางแสงขาวออก (ปัจจุบัน 2 วิ)
-    btnDelay: 12000      // ⏱️ รอกี่วิถึงให้ปุ่มกดไปหน้า index แสดงขึ้นมา (ปรับแก้ตรงนี้)
+    btnDelay: 11000      // ⏱️ รอกี่วิถึงให้ปุ่มกดไปหน้า index แสดงขึ้นมา (ปรับแก้ตรงนี้)
 };
 
 function triggerPackOpening() {
