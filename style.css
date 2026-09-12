@@ -1,5 +1,5 @@
 /* ==========================================
-   1. GLOBAL & VARIABLES
+   1. GLOBAL & BACKGROUND (ใช้ bg.jpg แบบเต็มระบบ)
    ========================================== */
 :root {
     --toty-gold: #f5d061;
@@ -14,10 +14,9 @@
     font-family: 'Kanit', sans-serif;
 }
 
-body, .main-body {
-    background-color: #030814;
-    background-image: radial-gradient(circle at center, #0a1b3a 0%, #030814 100%);
-    background-attachment: fixed;
+body, .main-body, .pack-body {
+    background: linear-gradient(180deg, rgba(3, 8, 20, 0.75) 0%, rgba(4, 8, 20, 0.88) 100%),
+                url('bg.jpg') center/cover no-repeat fixed !important;
     color: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -25,21 +24,22 @@ body, .main-body {
 }
 
 /* ==========================================
-   2. NAVBAR
+   2. NAVBAR (ดึง Tab Bar ด้านบนกลับมาแสดงผลเต็มๆ)
    ========================================== */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: rgba(10, 21, 45, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--toty-gold);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 40px !important;
+    background: rgba(4, 8, 20, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-bottom: 2px solid var(--toty-gold) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    width: 100% !important;
 }
 
 .nav-brand {
@@ -52,8 +52,8 @@ body, .main-body {
 }
 
 .nav-links {
-    display: flex;
-    gap: 15px;
+    display: flex !important;
+    gap: 15px !important;
 }
 
 .nav-links a {
@@ -75,7 +75,7 @@ body, .main-body {
 }
 
 /* ==========================================
-   3. INDEX PAGE (หน้าหลัก - สถิติ & โปรไฟล์)
+   3. INDEX PAGE (หน้า Stat หลัก)
    ========================================== */
 .main-container {
     max-width: 1000px;
@@ -94,7 +94,6 @@ body, .main-body {
     box-shadow: 0 0 35px rgba(245, 208, 97, 0.25), inset 0 0 20px rgba(245, 208, 97, 0.1);
 }
 
-/* แก้ไขรูปโปรไฟล์ฝั่งซ้ายของหน้า Index ให้แสดงผลถูกต้อง */
 .profile-header {
     display: flex;
     gap: 25px;
@@ -104,18 +103,18 @@ body, .main-body {
     border-bottom: 1px solid rgba(245, 208, 97, 0.3);
 }
 
-.profile-avatar-frame, .player-card-img {
+.player-card-img, .profile-avatar-frame {
     width: 130px;
     height: 160px;
     border: 2px solid var(--toty-gold);
     border-radius: 12px;
     overflow: hidden;
-    background: url('bg.jpg') center/cover, #0f224a;
+    background: rgba(15, 34, 74, 0.8);
     box-shadow: 0 0 20px rgba(245, 208, 97, 0.3);
     flex-shrink: 0;
 }
 
-.profile-avatar-frame img, .player-card-img img {
+.player-card-img img, .profile-avatar-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -129,9 +128,9 @@ body, .main-body {
 .info-label { font-size: 0.75rem; color: #a0aec0; }
 .info-value { font-size: 0.95rem; font-weight: 700; color: var(--toty-gold); }
 
-/* Stats Bar */
 .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .section-title { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--toty-gold); margin-bottom: 20px; border-left: 4px solid var(--toty-gold); padding-left: 10px; }
+
 .stat-item { margin-bottom: 15px; }
 .stat-header { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px; color: #fff; font-weight: 600; }
 .stat-bar-bg { width: 100%; height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 5px; overflow: hidden; }
@@ -149,30 +148,20 @@ body, .main-body {
 .trait-desc { color: #cbd5e0; font-size: 0.78rem; margin-top: 4px; }
 
 /* ==========================================
-   4. PACK PAGE (หน้า pack.html ตามดีไซน์คุณ)
+   4. PACK PAGE (ระบบกดเปิดซองการ์ด)
    ========================================== */
 body.pack-body {
-    background-color: var(--toty-navy);
-    background-image: 
-        radial-gradient(circle at 50% 30%, rgba(15, 35, 80, 0.9) 0%, rgba(4, 8, 20, 0.98) 75%),
-        repeating-linear-gradient(60deg, rgba(245, 208, 97, 0.015) 0px, rgba(245, 208, 97, 0.015) 1px, transparent 1px, transparent 8px);
-    color: #fff;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden;
     position: relative;
-    cursor: pointer;
-    user-select: none;
 }
 
 .ambient-glow {
     position: absolute;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(245, 208, 97, 0.2) 0%, rgba(0, 212, 255, 0.1) 40%, transparent 70%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245, 208, 97, 0.25) 0%, transparent 70%);
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -181,8 +170,8 @@ body.pack-body {
 }
 
 @keyframes pulse-glow {
-    0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
-    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    0% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.9); }
+    100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 .pack-container {
@@ -192,34 +181,34 @@ body.pack-body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin: auto;
+    padding: 40px 0;
 }
 
 .toty-logo {
     font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #fff 0%, #f5d061 50%, #996515 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
-    letter-spacing: 4px;
-    margin-bottom: 25px;
+    color: var(--toty-gold);
+    text-shadow: 0 0 15px rgba(245, 208, 97, 0.6);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
 }
 
 .pack-stage {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.pack-body:hover .pack-stage { transform: scale(1.03); }
+.pack-stage:hover { transform: scale(1.05); }
 
 .toty-pack {
-    width: 230px;
-    height: 340px;
-    background: linear-gradient(145deg, #0f224a 0%, #060e20 100%);
+    width: 220px;
+    height: 320px;
+    background: linear-gradient(145deg, rgba(15, 34, 74, 0.9) 0%, rgba(4, 8, 20, 0.95) 100%);
     border: 3px solid var(--toty-gold);
     border-radius: 16px;
     box-shadow: 0 0 35px rgba(245, 208, 97, 0.5), inset 0 0 20px rgba(0, 212, 255, 0.3);
@@ -234,64 +223,38 @@ body.pack-body {
 
 @keyframes pack-float {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-12px); }
-}
-
-.toty-pack::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transform: rotate(45deg);
-    animation: shine 2.5s infinite;
-}
-
-@keyframes shine {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
+    100% { transform: translateY(-10px); }
 }
 
 .pack-badge {
     font-family: 'Cinzel', serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: var(--toty-gold);
-    text-shadow: 0 0 12px rgba(245, 208, 97, 0.8);
-    margin-bottom: 12px;
+    text-shadow: 0 0 15px rgba(245, 208, 97, 0.8);
 }
 
 .pack-instruction {
-    margin-top: 25px;
-    font-size: 1.2rem;
+    margin-top: 20px;
+    font-size: 1rem;
     color: #e2e2e2;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     animation: blink 1.5s infinite;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-/* ควบคุมซ่อนวิดีโอตอนยังไม่กดเปิด */
 .fullscreen-video-container {
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
     background-color: #000;
     z-index: 1000;
-    display: none; /* ซ่อนไว้เป็นค่าเริ่มต้น */
+    display: none;
 }
 
-.fullscreen-video-container.active {
-    display: block !important;
-}
-
-.fullscreen-video-container video {
-    width: 100%; height: 100%;
-    object-fit: cover;
-}
+.fullscreen-video-container.active { display: block !important; }
+.fullscreen-video-container video { width: 100%; height: 100%; object-fit: cover; }
 
 .video-overlay-action {
     position: absolute;
@@ -309,81 +272,78 @@ body.pack-body {
     z-index: 999;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.8s ease;
 }
 
 .white-flash-overlay.active { opacity: 1; }
 
 .btn-stat-gold {
     display: inline-block;
-    padding: 16px 45px;
-    font-size: 1.3rem;
+    padding: 14px 40px;
+    font-size: 1.2rem;
     font-weight: 800;
     color: #040814;
     background: linear-gradient(135deg, #ffffff 0%, #f5d061 50%, #d4af37 100%);
     border: 2px solid #ffffff;
     border-radius: 50px;
     text-decoration: none;
-    box-shadow: 0 0 35px rgba(245, 208, 97, 0.9);
-    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(245, 208, 97, 0.9);
 }
 
-.btn-stat-gold:hover { transform: scale(1.08); box-shadow: 0 0 50px rgba(245, 208, 97, 1); }
-
 /* ==========================================
-   5. PORTFOLIO PAGE (หน้า portfolio.html แก้ไขการ์ด & รูปแตก)
+   5. PORTFOLIO PAGE (การ์ดกรอบใสสวยงาม)
    ========================================== */
-.portfolio-container, .portfolio-grid {
+.portfolio-container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 40px auto;
+    flex-grow: 1;
+}
+
+.portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin-top: 25px;
 }
 
-/* สร้างการ์ดรองรับ Class เดิมใน HTML ภาพที่ 3 */
-.portfolio-card, .portfolio-item {
-    background: rgba(10, 21, 45, 0.7);
-    border: 1.5px solid rgba(245, 208, 97, 0.35);
-    border-radius: 14px;
+.portfolio-card, .project-card, .portfolio-item {
+    background: rgba(10, 21, 45, 0.75) !important;
+    border: 1.5px solid rgba(245, 208, 97, 0.4) !important;
+    border-radius: 16px;
     padding: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
 }
 
-.portfolio-card:hover, .portfolio-item:hover {
-    transform: translateY(-6px);
-    border-color: var(--toty-gold);
+.portfolio-card:hover, .project-card:hover, .portfolio-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--toty-gold) !important;
     box-shadow: 0 8px 30px rgba(245, 208, 97, 0.3);
 }
 
-.portfolio-card h3, .portfolio-item h3 {
-    color: #ffffff;
-    font-size: 1.15rem;
-    margin: 10px 0 8px;
-}
-
-.portfolio-card p, .portfolio-item p {
-    color: #cbd5e0;
-    font-size: 0.88rem;
-    line-height: 1.5;
-}
-
-/* สไตล์กล่องรูปผลงานกันรูปแตก */
-.portfolio-img-box, .portfolio-card img {
+.portfolio-card img, .project-card img, .portfolio-item img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid rgba(245, 208, 97, 0.2);
-    background: rgba(245, 208, 97, 0.05);
+    margin-bottom: 12px;
+}
+
+.portfolio-card h3, .project-card h3, .portfolio-item h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.portfolio-card p, .project-card p, .portfolio-item p {
+    color: #cbd5e0;
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .hidden { display: none !important; }
-
-@media (max-width: 768px) {
-    .content-grid { grid-template-columns: 1fr; }
-    .info-grid { grid-template-columns: repeat(2, 1fr); }
-    .navbar { padding: 15px 20px; }
-}
+              
