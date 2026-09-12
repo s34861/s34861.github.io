@@ -575,5 +575,10 @@ body.main-body {
     background: rgba(255, 255, 255, 0.04) !important;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    /* เปลี่ยนสีตัวเลข % ในส่วน Stat ให้เป็นสีขาวสว่างเรืองแสง */
+.stat-header strong {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
 }
 }
