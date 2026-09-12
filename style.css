@@ -95,14 +95,45 @@ body, .main-body, .pack-body {
     padding: 35px;
     box-shadow: 0 0 30px rgba(245, 208, 97, 0.3);
 }
-
+/* คืนค่าโครงสร้างส่วนหัวให้รูป ชื่อ และกล่องสถิติ อยู่ชิดกันตามปกติ */
 .profile-header {
-    display: flex;
-    gap: 25px;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important; /* จัดชิดซ้ายทั้งหมด */
+    gap: 25px !important; /* ระยะห่างที่กำลังดีระหว่างรูปภาพกับข้อความ */
     margin-bottom: 30px;
     padding-bottom: 25px;
     border-bottom: 1px solid rgba(245, 208, 97, 0.3);
+}
+
+.profile-avatar-frame {
+    width: 130px;
+    height: 160px;
+    border: 2px solid #f5d061;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f224a;
+    box-shadow: 0 0 20px rgba(245, 208, 97, 0.3);
+    flex-shrink: 0;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.player-name {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 5px 0 15px 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 .player-card-img, .profile-avatar-frame {
