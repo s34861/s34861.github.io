@@ -583,4 +583,10 @@ body.main-body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
+    /* --- ยกเลิกความโปร่งแสงของ Navbar ให้กลับมาเป็นแบบเดิม --- */
+.navbar {
+    background: #0a152d !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
 }
