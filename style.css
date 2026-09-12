@@ -567,3 +567,28 @@ body.pack-body {
     .portfolio-slider-wrap { width: 100%; height: 200px; }
     .modal-content { max-width: 90vw; max-height: 80vh; }
 }
+
+/* Responsive YouTube Video Wrapper */
+.portfolio-video-wrap {
+    position: relative;
+    width: 380px;
+    height: 240px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1.5px solid rgba(245, 208, 97, 0.4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .portfolio-video-wrap {
+        width: 100%;
+        height: 210px;
+    }
+}
