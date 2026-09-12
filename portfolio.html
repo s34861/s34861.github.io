@@ -22,14 +22,20 @@
     <div class="main-container">
         <h1 class="page-title">ACHIEVEMENTS & PROJECTS</h1>
 
-        <!-- รายการผลงานแนวยาว เลื่อนดูข้างล่าง -->
+        <!-- รายการผลงานแนวยาว -->
         <div class="portfolio-list">
 
-            <!-- ผลงานที่ 1 -->
+            <!-- ผลงานที่ 1 (ใส่ได้หลายรูป) -->
             <div class="portfolio-row-card">
-                <div class="portfolio-row-img-wrap">
-                    <!-- เปลี่ยน src เป็นรูปผลงานจริงของคุณ -->
-                    <img src="https://via.placeholder.com/800x500/0c1b3a/f5d061?text=PROJECT+1+IMAGE" alt="ผลงานที่ 1" class="portfolio-row-img">
+                <div class="portfolio-slider-wrap">
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <div class="slider-track">
+                        <!-- ใส่รูปภาพของคุณตรงนี้กี่รูปก็ได้ครับ -->
+                        <img src="project1_1.jpg" alt="ผลงานที่ 1 รูป 1" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/f5d061?text=PROJECT+1+IMG+1';">
+                        <img src="project1_2.jpg" alt="ผลงานที่ 1 รูป 2" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/00d2ff?text=PROJECT+1+IMG+2';">
+                        <img src="project1_3.jpg" alt="ผลงานที่ 1 รูป 3" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/ff4b2b?text=PROJECT+1+IMG+3';">
+                    </div>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                 </div>
                 <div class="portfolio-row-content">
                     <span class="portfolio-row-tag">ACADEMIC PROJECT</span>
@@ -47,8 +53,13 @@
 
             <!-- ผลงานที่ 2 -->
             <div class="portfolio-row-card">
-                <div class="portfolio-row-img-wrap">
-                    <img src="https://via.placeholder.com/800x500/0c1b3a/00d2ff?text=COMPETITION+IMAGE" alt="ผลงานที่ 2" class="portfolio-row-img">
+                <div class="portfolio-slider-wrap">
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <div class="slider-track">
+                        <img src="project2_1.jpg" alt="ผลงานที่ 2 รูป 1" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/00d2ff?text=COMPETITION+IMG+1';">
+                        <img src="project2_2.jpg" alt="ผลงานที่ 2 รูป 2" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/f5d061?text=COMPETITION+IMG+2';">
+                    </div>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                 </div>
                 <div class="portfolio-row-content">
                     <span class="portfolio-row-tag">COMPETITION</span>
@@ -65,8 +76,12 @@
 
             <!-- ผลงานที่ 3 -->
             <div class="portfolio-row-card">
-                <div class="portfolio-row-img-wrap">
-                    <img src="https://via.placeholder.com/800x500/0c1b3a/f5d061?text=CERTIFICATE+IMAGE" alt="ผลงานที่ 3" class="portfolio-row-img">
+                <div class="portfolio-slider-wrap">
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <div class="slider-track">
+                        <img src="project3_1.jpg" alt="ผลงานที่ 3 รูป 1" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/f5d061?text=CERTIFICATE+IMG+1';">
+                    </div>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                 </div>
                 <div class="portfolio-row-content">
                     <span class="portfolio-row-tag">CERTIFICATE & ACTIVITY</span>
@@ -81,6 +96,12 @@
             </div>
 
         </div>
+    </div>
+
+    <!-- Modal ขยายรูปขนาด 75% ของหน้าจอ -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
     </div>
 
     <script src="script.js"></script>
