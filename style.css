@@ -592,3 +592,238 @@ body.pack-body {
         height: 210px;
     }
 }
+/* ==========================================
+   DREAM FACULTIES (ADVANCED TOTY STYLE)
+   ========================================== */
+.dream-section {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.section-badge {
+    color: #f5d061;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background: rgba(245, 208, 97, 0.1);
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 208, 97, 0.3);
+}
+
+.faculty-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.faculty-card.toty-special {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(12, 27, 58, 0.7), rgba(5, 12, 28, 0.8)) !important;
+    backdrop-filter: blur(12px) saturate(150%) !important;
+    border: 1.5px solid rgba(245, 208, 97, 0.4);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(245, 208, 97, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card-glow-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #f5d061, #ffffff, #f5d061, transparent);
+}
+
+.faculty-card:hover {
+    border-color: #f5d061;
+    box-shadow: 0 0 35px rgba(245, 208, 97, 0.4), inset 0 0 20px rgba(245, 208, 97, 0.1);
+    transform: translateY(-5px);
+}
+
+.faculty-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(245, 208, 97, 0.2);
+    margin-bottom: 20px;
+}
+
+.university-logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f5d061, #996515);
+    color: #040814;
+    font-weight: 800;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.faculty-title {
+    flex: 1;
+}
+
+.faculty-title h3 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 3px;
+}
+
+.university-name {
+    color: #f5d061;
+    font-size: 0.85rem;
+}
+
+.faculty-status-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.tcas-round {
+    background: rgba(245, 208, 97, 0.15);
+    border: 1px solid #f5d061;
+    color: #f5d061;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.match-score {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #040814;
+    background: #f5d061;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.faculty-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.faculty-info-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.2s ease;
+}
+
+.faculty-info-item:hover {
+    background: rgba(245, 208, 97, 0.06);
+    border-color: rgba(245, 208, 97, 0.3);
+}
+
+.faculty-info-item.full-width {
+    grid-column: span 2;
+}
+
+.faculty-info-item.highlight-box {
+    background: rgba(245, 208, 97, 0.08) !important;
+    border: 1px solid rgba(245, 208, 97, 0.3) !important;
+}
+
+.faculty-info-item h4 {
+    color: #f5d061;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.faculty-info-item p {
+    color: #cbd5e0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.criteria-list {
+    margin: 0;
+    padding-left: 20px;
+    color: #cbd5e0;
+    font-size: 0.88rem;
+}
+
+.criteria-list li {
+    margin-bottom: 5px;
+}
+
+.criteria-list li span {
+    color: #f5d061;
+    font-weight: 600;
+}
+
+.faculty-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(245, 208, 97, 0.2);
+}
+
+.tags-group {
+    display: flex;
+    gap: 8px;
+}
+
+.f-tag {
+    font-size: 0.75rem;
+    color: #f5d061;
+    background: rgba(245, 208, 97, 0.1);
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.faculty-btn {
+    text-decoration: none;
+    font-size: 0.82rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.faculty-btn.primary-btn {
+    background: linear-gradient(135deg, #f5d061, #d4a327);
+    color: #040814;
+    font-weight: 700;
+}
+
+.faculty-btn.secondary-btn {
+    border: 1px solid rgba(245, 208, 97, 0.4);
+    color: #f5d061;
+    background: rgba(10, 21, 45, 0.6);
+}
+
+@media (max-width: 768px) {
+    .faculty-body {
+        grid-template-columns: 1fr;
+    }
+    .faculty-info-item.full-width {
+        grid-column: span 1;
+    }
+    .faculty-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
