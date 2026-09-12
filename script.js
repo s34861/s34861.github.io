@@ -47,3 +47,48 @@ function triggerPackOpening() {
         }
     }, CONFIG.btnDelay);
 }
+// ระบบสไลด์ภาพในหน้า Portfolio
+function moveSlide(button, direction) {
+    const sliderWrap = button.closest('.portfolio-slider-wrap');
+    const track = sliderWrap.querySelector('.slider-track');
+    const images = track.querySelectorAll('img');
+    const totalImages = images.length;
+
+    if (totalImages <= 1) return; // ถ้ามีรูปเดียวไม่ต้องเลื่อน
+
+    // ดึง index ปัจจุบัน
+    let currentIndex = parseInt(track.dataset.currentIndex || 0);
+
+    currentIndex += direction;
+
+    // เลื่อนวนลูป
+    if (currentIndex < 0) {
+        currentIndex = totalImages - 1;
+    } else if (currentIndex >= totalImages) {
+        currentIndex = 0;
+    }
+
+    track.dataset.currentIndex = currentIndex;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// ระบบขยายภาพ Modal (75% จอ)
+function openModal(imgSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    
+    modal.style.display = 'flex';
+    modalImg.src = imgSrc;
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+}
+
+// กด ESC เพื่อปิดภาพขยายได้
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
+});
