@@ -1031,3 +1031,193 @@ body.pack-body {
         grid-column: span 1;
     }
 }
+/* ==========================================
+   DREAM SECTION: บีบขนาดให้เท่ากับบล็อก Stat ด้านบน
+   ========================================== */
+.dream-section {
+    margin: 30px auto 0 auto; /* จัดให้อยู่ตรงกลางหน้าเว็บ */
+    width: 100%;
+    max-width: 900px; /* บังคับความกว้างให้เท่ากับกรอบโปรไฟล์ด้านบน */
+    box-sizing: border-box;
+}
+
+/* ตัวการ์ดข้างใน */
+.faculty-card.toty-special {
+    position: relative;
+    width: 100%;
+    background: rgba(10, 21, 45, 0.45) !important;
+    backdrop-filter: blur(12px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
+    border: 1.5px solid rgba(245, 208, 97, 0.6) !important;
+    border-radius: 16px !important;
+    padding: 20px 24px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    box-sizing: border-box;
+}
+
+/* ส่วนหัว Header */
+.faculty-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(245, 208, 97, 0.2);
+    margin-bottom: 16px;
+}
+
+.university-logo {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f5d061, #996515);
+    color: #040814;
+    font-weight: 800;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.faculty-title h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.university-name {
+    color: #f5d061;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.faculty-status-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    margin-left: auto;
+}
+
+.tcas-round {
+    background: rgba(245, 208, 97, 0.15);
+    border: 1px solid rgba(245, 208, 97, 0.5);
+    color: #f5d061;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.match-score {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #040814;
+    background: #f5d061;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Grid จัดเนื้อหาภายใน */
+.faculty-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.faculty-info-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(245, 208, 97, 0.12);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.faculty-info-item.full-width {
+    grid-column: span 2;
+}
+
+.faculty-info-item.highlight-box {
+    background: rgba(245, 208, 97, 0.05) !important;
+    border: 1px solid rgba(245, 208, 97, 0.25) !important;
+}
+
+.faculty-info-item h4 {
+    color: #f5d061;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+
+.faculty-info-item p {
+    color: #cbd5e0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.criteria-list {
+    margin: 0;
+    padding-left: 16px;
+    color: #cbd5e0;
+    font-size: 0.78rem;
+}
+
+.criteria-list li {
+    margin-bottom: 3px;
+}
+
+.criteria-list li span {
+    color: #f5d061;
+    font-weight: 600;
+}
+
+/* ส่วน Footer ปุ่มด้านล่าง */
+.faculty-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(245, 208, 97, 0.18);
+}
+
+.tags-group {
+    display: flex;
+    gap: 6px;
+}
+
+.f-tag {
+    font-size: 0.7rem;
+    color: #f5d061;
+    background: rgba(245, 208, 97, 0.08);
+    border: 1px solid rgba(245, 208, 97, 0.18);
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+.faculty-btn {
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.faculty-btn.primary-btn {
+    background: #f5d061;
+    color: #040814;
+    font-weight: 700;
+}
+
+.faculty-btn.secondary-btn {
+    border: 1px solid rgba(245, 208, 97, 0.4);
+    color: #f5d061;
+    background: rgba(10, 21, 45, 0.5);
+   }
