@@ -1221,3 +1221,23 @@ body.pack-body {
     color: #f5d061;
     background: rgba(10, 21, 45, 0.5);
    }
+/* ==========================================
+   FORCE FULL WIDTH: บังคับให้ขอบกล่องล่างตรงกับกล่องบนเป๊ะ
+   ========================================== */
+.dream-section {
+    width: 100% !important;
+    max-width: none !important; /* ยกเลิกการบีบความกว้างเดิมออกทั้งหมด */
+    margin: 30px 0 0 0 !important;
+    box-sizing: border-box !important;
+}
+
+.faculty-container {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.faculty-card.toty-special {
+    width: 100% !important; /* บังคับยืดขอบซ้าย-ขวาให้เท่ากับกล่องโปรไฟล์ด้านบน */
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
