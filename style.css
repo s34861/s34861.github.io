@@ -934,3 +934,133 @@ body.pack-body {
     font-size: 0.8rem;
     color: #cbd5e1;
 }
+/* ================= ADMISSION STATS STYLES (TOTY THEME) ================= */
+.admission-stats-card {
+    background: linear-gradient(135deg, rgba(8, 15, 30, 0.95), rgba(16, 28, 54, 0.95));
+    border: 1px solid rgba(245, 208, 97, 0.4);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 35px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(245, 208, 97, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.stats-badge {
+    background: linear-gradient(135deg, #f5d061, #e6b800);
+    color: #000;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.stats-title-group h3 {
+    color: #ffffff;
+    font-size: 1.35rem;
+    margin: 6px 0;
+    font-weight: 700;
+}
+
+.stats-title-group p {
+    color: #94a3b8;
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+}
+
+.sub-title {
+    color: #f5d061;
+    font-size: 1rem;
+    margin: 15px 0 10px 0;
+}
+
+/* ตาราง TOTY Style */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.toty-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+}
+
+.toty-table th {
+    background: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+    font-weight: 700;
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 2px solid rgba(0, 210, 255, 0.3);
+}
+
+.toty-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.toty-table tr.sub-row td {
+    padding-left: 28px;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+}
+
+.highlight-percent {
+    color: #f5d061;
+    font-weight: 800;
+}
+
+/* กล่องสรุปคะแนนล่างสุด */
+.score-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.summary-box {
+    background: rgba(15, 23, 42, 0.8);
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.summary-box.gold-border {
+    border: 1px solid rgba(245, 208, 97, 0.5);
+    box-shadow: 0 0 15px rgba(245, 208, 97, 0.15);
+}
+
+.summary-box.blue-border {
+    border: 1px solid rgba(0, 210, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
+}
+
+.summary-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.summary-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 8px 0;
+    font-family: 'Cinzel', sans-serif;
+}
+
+.summary-box.gold-border .summary-value { color: #f5d061; }
+.summary-box.blue-border .summary-value { color: #00d2ff; }
+
+.summary-desc {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+}
