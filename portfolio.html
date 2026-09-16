@@ -131,7 +131,29 @@
             </div>
         </div>
     </div>
-
+ <!-- ผลงานที่ 4 (ใส่ได้หลายรูป) -->
+            <div class="portfolio-row-card">
+                <div class="portfolio-slider-wrap">
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <div class="slider-track">
+                        <!-- ใส่รูปภาพของคุณตรงนี้กี่รูปก็ได้ครับ -->
+                        <img src="project5_1.jpg" alt="ผลงานที่ 1 รูป 1" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/f5d061?text=PROJECT+1+IMG+1';">
+                        <img src="project5_2.jpg" alt="ผลงานที่ 1 รูป 2" class="portfolio-row-img zoomable" onclick="openModal(this.src)" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x500/0c1b3a/00d2ff?text=PROJECT+1+IMG+2';">
+                     </div>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
+                </div>
+                <div class="portfolio-row-content">
+                    <span class="portfolio-row-tag">VOLUNTEER</span>
+                    <h2 class="portfolio-row-title">กิจกรรมจิตาอาสา การช่วยเหลือสังคม</h2>
+                    <p class="portfolio-row-desc">
+                     เป็นตัวแทน รด.จราจร ปฏิบัติหน้าที่ช่วยอำนวยความสะดวกด้านการจราจรและโบกรถ เพื่อให้ผู้ใช้รถใช้ถนนสามารถเดินทางได้อย่างปลอดภัยและเป็นระเบียบ กิจกรรมนี้ทำให้ได้ฝึกความมีวินัย ความรับผิดชอบ การทำงานร่วมกับผู้อื่น และการเสียสละเวลาเพื่อประโยชน์ส่วนรวม  </p>
+                    <div class="portfolio-row-meta">
+                        <span class="meta-item">🗓️ DEK 70</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Modal ขยายรูปขนาด 75% ของหน้าจอ -->
     <div id="imageModal" class="image-modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
